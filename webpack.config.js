@@ -1,4 +1,4 @@
-
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require("path");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
@@ -11,6 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist", "srv"),
         filename: "[name].bundle.js",
+        clean: true
     },
     module: {
         rules: [
@@ -33,6 +34,14 @@ module.exports = {
         ],
     },
     plugins: [
-        new MonacoWebpackPlugin()
+        new MonacoWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'src/static/',
+                    to: '../'
+                },
+            ],
+        }),
     ]
 };

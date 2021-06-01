@@ -1,8 +1,13 @@
 {
   "name": "vs-code-viewer-extension",
-  "displayName": "VS Code Viewer",
+  "displayName": "VS Code Viewer (Fork)",
   "description": "The unofficial browser extension port of VS Code for viewing programming language files and data files.  The extension automatically detects if you are opening a raw code or data file and opens the contents within a VS Code Viewer page with basic language support for 60+ languages.  Right+click to discover the command pallet, document formatter and other VS Code editor features supported in the Viewer.",
   "license": "MIT",
+  "scripts": {
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production",
+    "pack": "mkdirp out && cd ./dist/ && nodezip -c ../out/package.zip ."
+  },
   "keywords": [
     "vs",
     "code",
@@ -18,9 +23,11 @@
   },
   "devDependencies": {
     "@types/chrome": "0.0.95",
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
+    "node-zip": "1.1.1",
     "shx": "^0.3.2",
     "style-loader": "^2.0.0",
     "ts-loader": "^9.2.2",
