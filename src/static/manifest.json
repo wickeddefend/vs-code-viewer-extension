@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "VS Code Viewer",
-    "author": "Chris Kuech",
+    "name": "VS Code Viewer (Fork)",
+    "author": "Chris Kuech, Nikita Romanenko",
     "description": "The unofficial browser extension port of VS Code for automatically viewing programming language files and data files.",
     "icons": {
         "128": "icon-128.png",
         "300": "icon-300.png"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "content_scripts": [
         {
             "js": [
