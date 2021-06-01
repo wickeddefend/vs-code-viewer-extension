@@ -29,9 +29,10 @@ const addVsCodeViewer = (config) => {
     window.addEventListener("message", receiveMessage, false);
 
     const iframe = document.createElement("iframe");
-    iframe.sandbox.add("allow-scripts", "allow-same-origin");
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
+    iframe.sandbox.add("allow-scripts", "allow-same-origin"); 
+    iframe.style.width = "100vw";
+    iframe.style.height = "100vh";
+    iframe.style.display = "block";
     iframe.style.overflow = "hidden";
     iframe.style.border = "none";
     iframe.src = url;
